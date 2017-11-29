@@ -8,5 +8,6 @@ class location extends Model
 {
     protected $fillable = [
         'name_location',
+        'id_company',
     ];
 }
