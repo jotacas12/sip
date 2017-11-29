@@ -12,7 +12,7 @@ class contract extends Model
         'extensions',
         'start_date',
         'final_date',
-        'position',
+        'id_cargo',
         'salary',
         'for_distance',
         'per_bearing',

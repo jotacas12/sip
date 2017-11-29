@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMunicipalitiesTable extends Migration
+class CreateClassificationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateMunicipalitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('municipalities', function (Blueprint $table) {
+        Schema::create('classifications', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name_municipality');
-            $table->integer('id_departament')->unsigned();
+            $table->string('name_classification'); //clasificacion empleado
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateMunicipalitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('municipalities');
+        Schema::dropIfExists('classifications');
     }
 }
