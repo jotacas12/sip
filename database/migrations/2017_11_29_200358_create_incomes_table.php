@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTrasladosTable extends Migration
+class CreateIncomesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateTrasladosTable extends Migration
      */
     public function up()
     {
-        Schema::create('traslados', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('incomes', function (Blueprint $table) {
+
             $table->integer('save')->unsigned(); //guardar
             $table->integer('update')->unsigned(); //Atualizar
             $table->integer('delete')->unsigned(); //Eliminar
-            $table->integer('id_profile')->unsigned(); //id perfil
+            $table->integer('valr')->unsigned(); //modificar precio
+            $table->integer('profile')->unsigned(); //id perfil
             $table->timestamps();
+            $table->primary('profile');
         });
     }
 
@@ -30,6 +32,6 @@ class CreateTrasladosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('traslados');
+        Schema::dropIfExists('incomes');
     }
 }

@@ -4,13 +4,13 @@ namespace App\Profile;
 
 use Illuminate\Database\Eloquent\Model;
 
-class traslado extends Model
+class material extends Model
 {
     protected $fillable = [
-        'profile',
         'save',
         'update',
         'delete',
+        'profile',
 
     ];
 }

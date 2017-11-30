@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->primary('identification');
 
-            $table->foreign('identification')->references('identification')->on('P_profiles');
         });
     }
     /**

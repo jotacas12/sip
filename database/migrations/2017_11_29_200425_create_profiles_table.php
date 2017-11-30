@@ -15,15 +15,15 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name_profile'); //nombre perfil
             $table->integer('identification')->unsigned(); //cedula
+            $table->string('name_profile'); // tipo cuenta bancaria
             $table->timestamps();
 
-            $table->foreign('idP_profiles')->references('id')->on('P_materials');
-            $table->foreign('idP_profiles')->references('id')->on('dispatches');
-            $table->foreign('idP_profiles')->references('id')->on('traslados');
-            $table->foreign('idP_profiles')->references('id')->on('income');
-            $table->foreign('idP_profiles')->references('id')->on('purchase');
+            $table->foreign('id')->references('profile')->on('materials');
+            $table->foreign('id_profile', 'id')->references('profile')->on('traslados');
+            $table->foreign('id')->references('profile')->on('dispatches');
+            $table->foreign('id')->references('profile')->on('incomes');
+            $table->foreign('id')->references('profile')->on('purchases');
         });
     }
 

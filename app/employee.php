@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -30,6 +29,5 @@ class employee extends Model
         'last_name',
         'Photo',
         'id_classification',
-
     ];
 }

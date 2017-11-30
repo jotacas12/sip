@@ -4,13 +4,15 @@ namespace App\Profile;
 
 use Illuminate\Database\Eloquent\Model;
 
-class traslado extends Model
+class menu extends Model
 {
     protected $fillable = [
         'profile',
-        'save',
-        'update',
-        'delete',
+        'materials',
+        'dispatches',
+        'traslados',
+        'income',
+        'purchase',
 
     ];
 }

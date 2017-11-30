@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -39,7 +38,6 @@ class CreateEmployeesTable extends Migration
             $table->string('Photo'); //foto empleado
             $table->integer('id_classification')->unsigned(); //apellidos
             $table->timestamps();
-
             $table->foreign('identification')->references('identification')->on('users');
             $table->foreign('id_company')->references('id')->on('companies');
             $table->foreign('id_bank')->references('id')->on('banks');
@@ -54,7 +52,6 @@ class CreateEmployeesTable extends Migration
             $table->foreign('id_classification')->references('id')->on('classifications');
         });
     }
-
     /**
      * Reverse the migrations.
      *
