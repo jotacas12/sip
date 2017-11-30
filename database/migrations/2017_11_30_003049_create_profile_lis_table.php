@@ -18,7 +18,6 @@ class CreateProfileLisTable extends Migration
             $table->integer('profile')->unsigned(); //municipio
             $table->timestamps();
 
-            $table->foreign('profile')->references('id')->on('profiles');
         });
     }
 

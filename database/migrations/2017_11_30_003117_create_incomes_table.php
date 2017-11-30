@@ -22,7 +22,6 @@ class CreateIncomesTable extends Migration
             $table->integer('valr')->unsigned(); //modificar precio
             $table->timestamps();
 
-            $table->foreign('id_profile')->references('id_list')->on('profile_lis');
         });
     }
 

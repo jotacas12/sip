@@ -22,7 +22,7 @@ class CreateDispatchesTable extends Migration
             $table->integer('update')->unsigned(); //Atualizar
             $table->integer('delete')->unsigned(); //Eliminar
             $table->timestamps();
-            $table->foreign('id_profile')->references('id_list')->on('profile_lis');
+
         });
     }
 

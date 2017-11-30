@@ -21,7 +21,6 @@ class CreateTrasladosTable extends Migration
             $table->integer('delete')->unsigned(); //Eliminar
             $table->timestamps();
 
-            $table->foreign('id_profile')->references('id_list')->on('profile_lis');
         });
     }
 
