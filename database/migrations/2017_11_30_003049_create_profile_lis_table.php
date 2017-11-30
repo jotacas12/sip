@@ -1,9 +1,10 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateProfileLisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +13,15 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->integer('identification')->unsigned();
-            $table->string('password');
+        Schema::create('profile_lis', function (Blueprint $table) {
+            $table->increments('id_list');
+            $table->integer('profile')->unsigned(); //municipio
             $table->timestamps();
-            $table->primary('identification');
 
-            $table->foreign('identification')->references('identification')->on('P_profiles');
+            $table->foreign('profile')->references('id')->on('profiles');
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -28,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('profile_lis');
     }
 }

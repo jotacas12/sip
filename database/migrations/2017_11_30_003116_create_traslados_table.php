@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDispatchesTable extends Migration
+class CreateTrasladosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateDispatchesTable extends Migration
      */
     public function up()
     {
-
-        //despachos
-        Schema::create('dispatches', function (Blueprint $table) {
+        Schema::create('traslados', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_profile')->unsigned(); //id perfil
             $table->integer('save')->unsigned(); //guardar
             $table->integer('update')->unsigned(); //Atualizar
             $table->integer('delete')->unsigned(); //Eliminar
             $table->timestamps();
+
+            $table->foreign('id_profile')->references('id_list')->on('profile_lis');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateDispatchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dispatches');
+        Schema::dropIfExists('traslados');
     }
 }

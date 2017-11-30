@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Employee;
 
-use Illuminate\Http\Request;
+use App\employee;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
@@ -14,7 +15,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = employee::all();
+        return $usuarios;
     }
 
     /**
@@ -22,10 +24,6 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -55,10 +53,6 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.

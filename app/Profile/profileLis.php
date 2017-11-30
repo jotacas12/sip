@@ -4,13 +4,10 @@ namespace App\Profile;
 
 use Illuminate\Database\Eloquent\Model;
 
-class material extends Model
+class profileLis extends Model
 {
     protected $fillable = [
-        'id_profile',
-        'save',
-        'update',
-        'delete',
+        'profile',
 
     ];
 }

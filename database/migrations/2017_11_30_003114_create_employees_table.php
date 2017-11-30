@@ -38,9 +38,11 @@ class CreateEmployeesTable extends Migration
             $table->string('last_name'); //apellidos
             $table->string('Photo'); //foto empleado
             $table->integer('id_classification')->unsigned(); //apellidos
+            $table->integer('perlfil')->unsigned(); //apellidos
             $table->timestamps();
 
             $table->foreign('identification')->references('identification')->on('users');
+            $table->foreign('perlfil')->references('id')->on('profiles');
             $table->foreign('id_company')->references('id')->on('companies');
             $table->foreign('id_bank')->references('id')->on('banks');
             $table->foreign('state')->references('id')->on('personal_states');

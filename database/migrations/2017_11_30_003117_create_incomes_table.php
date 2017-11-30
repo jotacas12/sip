@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePurchasesTable extends Migration
+class CreateIncomesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePurchasesTable extends Migration
      */
     public function up()
     {
-        Schema::create('purchases', function (Blueprint $table) {
+        Schema::create('incomes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_profile')->unsigned(); //id perfil
             $table->integer('save')->unsigned(); //guardar
@@ -21,6 +21,8 @@ class CreatePurchasesTable extends Migration
             $table->integer('delete')->unsigned(); //Eliminar
             $table->integer('valr')->unsigned(); //modificar precio
             $table->timestamps();
+
+            $table->foreign('id_profile')->references('id_list')->on('profile_lis');
         });
     }
 
@@ -31,6 +33,6 @@ class CreatePurchasesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('purchases');
+        Schema::dropIfExists('incomes');
     }
 }
