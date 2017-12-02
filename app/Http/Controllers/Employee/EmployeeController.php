@@ -15,8 +15,24 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $usuarios = employee::all();
-        return $usuarios;
+
+        $array = array('BANCOS',
+            'EPS',
+            'PENSION',
+            'CARGOS',
+            'SEXO',
+            'ESTADO',
+            'ARL',
+            'LOCALIZACION',
+            'CLASIFICACION',
+            'TIPO CONTRATOS');
+        $longitud = count($array);
+
+        for ($i = 0; $i < $longitud; $i++) {
+            //saco el valor de cada elemento
+            echo $array[$i];
+            echo "<br>";
+        }
     }
 
     /**
