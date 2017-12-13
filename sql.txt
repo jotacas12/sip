@@ -14,3 +14,8 @@ INSERT INTO `pensions` (`idpensions`, `name_pensions`, `id_list`) VALUES (NULL, 
 INSERT INTO `sexo` (`idsexo`, `name`, `id_list`) VALUES (NULL, 'HOMBRE', '5'), (NULL, 'MUJER', '5');
 INSERT INTO `location` (`id_location`, `name_location`, `id_list`) VALUES (NULL, 'medellin', '8');
 INSERT INTO `employees` (`idemployees`, `id_company`, `birth_date`, `phone`, `id_bank`, `n_account`, `account_type`, `civil_status`, `idUser`, `place_of_birth`, `place_of_work`, `state`, `location`, `eps`, `arp`, `pension`, `id_charge`, `id_depart`, `id_sex`, `id_clasificacion`, `contracts_idcontracts`, `Users_id_identification`, `name`, `last_name`, `address`) VALUES (NULL, '1', '2017-12-12 00:00:00', '313575774', '1', '102568', NULL, '1', '1', NULL, NULL, '1', '1', '1', '1', '1', '1', '1', '1', '1', NULL, NULL, 'JORGE ANDRES', 'BUITRAGO LEAL', NULL);
+INSERT INTO `profile_company` (`idprofile_company`, `id_company`, `identification`) VALUES (NULL, '1', '1039679695');
+INSERT INTO `profile_submenu` (`idsubmenu`, `id_profile`, `id`) VALUES ('1', '1', NULL);
+INSERT INTO `permisos` (`id_permiso`, `save`, `update`, `delete`, `id_profile`, `profile_submenu_idsubmenu`) VALUES (NULL, '1', '1', '1', '1', '1');
+INSERT INTO `type_input` (`idType_input`, `name`) VALUES (NULL, 'MATERIALES DE OBRA'), (NULL, 'HERRAMIENTA MENOR'), (NULL, 'EQUIPOS DE GAMA ALTA'), (NULL, 'MUEBLES Y ENCERES'), (NULL, 'EQUIPOS Y ERRAMIENTAS DE OFICINA');
+INSERT INTO `unity` (`idUnity`, `name`) VALUES (NULL, 'KILO'), (NULL, 'METRO'), (NULL, 'TONELADA'), (NULL, 'GALON'), (NULL, 'LIBRA');

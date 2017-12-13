@@ -19,29 +19,35 @@ class UserController extends Controller
  
     }
 
-    public function create($json = ''){
-        $var  = json_decode($json);
-        $user   = $var->user;
-        $pass   =$var->pass;
-        $mail=   $var->mail;
-        $state   =$var->state;
+    public function create(Request $request){
+        
+       
+        $user = $request->input("user"); 
+        $pass = $request->input("pass"); 
+        $mail = $request->input("mail"); 
+        $state = $request->input("state"); 
+
 
         DB::table('users')->insert(
             ['id_identification' => $user, 'password' =>  $pass,'mail' => $mail, 'state' => $state]
         );
     }
 
-    public function readJson($json = '')
+    public function readJson(Request $request)
     {
-        
-        $var  = json_decode($json);
-        $user   = $var->user;
-        $pass   =$var->pass;
+
+        $user = $request->input("user"); 
+        $pass = $request->input("pass"); 
         
       
-        $var1= DB::table('users')->where('id_identification',  $user)->where('password', $pass) ->first();
+        $var1= DB::table('users')
+        ->join('profile_company', 'users.id_identification','=', 'profile_company.identification')
+        ->where('users.id_identification',  $user)
+        ->where('users.password', $pass) 
+        ->select('users.*')
+        ->first();
 
-   
+
        if(!$var1){
 
         $response=false;

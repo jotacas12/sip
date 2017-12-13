@@ -11,10 +11,12 @@
 |
  */
 
+
 Route::group(['middleware' => 'cors'], function () {
-Route::get('/user/{json}', 'User\UserController@readJson');
+Route::post('/user', 'User\UserController@readJson');
 Route::get('/user/create/{json}', 'User\UserController@create');
 Route::post('/profiles', 'P_profile\P_profilesController@Profiles');
+Route::post('/material', 'Materiales\MaterialController@query');
 
 Route::get('/company', 'Company\CompanyController@index');
 
