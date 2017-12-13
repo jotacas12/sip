@@ -4,6 +4,7 @@ namespace App\Http\Controllers\P_profile;
 
 use App\Employee;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\P_profiles;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,26 @@ class P_profilesController extends Controller
     public function index()
     {
 
-        $empleado = P_profiles::where('idP_profiles', '=', Employee::get('idUser'))->get()->first();
+        //$empleado = P_profiles::where('idP_profiles', '=', Employee::get('idUser'))->get()->first();
+
+    
+    }
+
+    public function Profiles($json){
+
+        $var  = json_decode($json);
+        $identificaction   = $var->user;
+
+        $users = DB::table('employees')
+        ->join('P_profiles', 'employees.idUser', '=', 'P_profiles.idP_profiles')
+        ->join('profile_submenu', 'P_profiles.idP_profiles', '=', 'profile_submenu.id_profile')
+        ->join('permisos', 'profile_submenu.id','=', 'permisos.profile_submenu_idsubmenu')
+        ->where('employees.Users_id_identification',  $identificaction)
+        ->where('profile_submenu.idsubmenu', 1)
+        ->select('P_profiles.name','permisos.*')
+        ->get();
+
+        return response()->json(['status' => 'ok', 'data' => $users], 200);
     }
 
     /**

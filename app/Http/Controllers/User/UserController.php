@@ -19,6 +19,18 @@ class UserController extends Controller
  
     }
 
+    public function create($json = ''){
+        $var  = json_decode($json);
+        $user   = $var->user;
+        $pass   =$var->pass;
+        $mail=   $var->mail;
+        $state   =$var->state;
+
+        DB::table('users')->insert(
+            ['id_identification' => $user, 'password' =>  $pass,'mail' => $mail, 'state' => $state]
+        );
+    }
+
     public function readJson($json = '')
     {
         
