@@ -14,7 +14,8 @@
 Route::group(['middleware' => 'cors'], function () {
 Route::get('/user/{json}', 'User\UserController@readJson');
 Route::get('/user/create/{json}', 'User\UserController@create');
-Route::get('/profiles/{json}', 'P_profile\P_profilesController@Profiles');
+Route::post('/profiles', 'P_profile\P_profilesController@Profiles');
+
 Route::get('/company', 'Company\CompanyController@index');
 
 });

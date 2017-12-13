@@ -23,10 +23,10 @@ class P_profilesController extends Controller
     
     }
 
-    public function Profiles($json){
+    public function Profiles(Request $request){
 
-        $var  = json_decode($json);
-        $identificaction   = $var->user;
+    
+        $identificaction = $request->input("user");
 
         $users = DB::table('employees')
         ->join('P_profiles', 'employees.idUser', '=', 'P_profiles.idP_profiles')
