@@ -1,0 +1,16 @@
+INSERT INTO `lists` (`id_listas`, `name`) VALUES (NULL, 'BANCOS'), (NULL, 'EPS'), (NULL, 'PENSION'), (NULL, 'CARGOS'), (NULL, 'SEXO'), (NULL, 'ESTADO'), (NULL, 'ARL'), (NULL, 'LOCALIZACION'), (NULL, 'CLASIFICACION'), (NULL, 'CONTRATOS');
+INSERT INTO `states` (`idstate`, `state`, `id_list`) VALUES (NULL, 'ACTIVO', '6'), (NULL, 'CANCELADO', '6');
+INSERT INTO `users` (`id_identification`, `password`, `mail`, `state`) VALUES ('1039679695', 'sEBASTIAN123', 'JOTACAS12@HOTMAIL.COM', '1');
+INSERT INTO `p_profiles` (`idP_profiles`, `name`) VALUES (NULL, 'Administrador'), (NULL, 'Digitador');
+INSERT INTO `business` (`idbusiness`, `company_name`, `address`, `nit`, `phone`, `logo`) VALUES (NULL, 'CONSORCIO C&C', 'CALLE 16 #45-45', NULL, '4485430', NULL), (NULL, 'CONSTRUINTEGRALES', 'CALLE 16 #45-45', NULL, '4485430', NULL), (NULL, 'GAAL INGENIERIA', 'CALLE 16 #45-45', NULL, '4485430', NULL), (NULL, 'CON-GAS', 'CALLE 16 #45-45', NULL, '4485430', NULL);
+INSERT INTO `arl` (`idarl`, `name_arl`, `id_list`) VALUES (NULL, 'SURA', '7');
+INSERT INTO `bank` (`idbank`, `name`, `id_list`) VALUES (NULL, 'BANCOLOMBIA', '1'), (NULL, 'DAVIVIENDA', '1');
+INSERT INTO `charges` (`idcharges`, `name_charges`, `id_company`, `id_list`) VALUES (NULL, 'ADMINISTRACTIVO', '1', '4'), (NULL, 'AUXILIAR', '1', '4');
+INSERT INTO `civil_status` (`idcivil_status`, `name`) VALUES ('1', 'CASADO'), ('2', 'SOLTERO');
+INSERT INTO `clasificaciones` (`idclasificaciones`, `name`, `id_list`) VALUES (NULL, 'EMPLEADO', '9');
+INSERT INTO `departments` (`name_departments`, `id_departamen`) VALUES ('ANTIOQUIA', NULL);
+INSERT INTO `eps` (`ideps`, `name_eps`, `id_list`) VALUES (NULL, 'MEDIMAS', '2'), (NULL, 'SURA', NULL);
+INSERT INTO `pensions` (`idpensions`, `name_pensions`, `id_list`) VALUES (NULL, 'COLPENSIONES', '3');
+INSERT INTO `sexo` (`idsexo`, `name`, `id_list`) VALUES (NULL, 'HOMBRE', '5'), (NULL, 'MUJER', '5');
+INSERT INTO `location` (`id_location`, `name_location`, `id_list`) VALUES (NULL, 'medellin', '8');
+INSERT INTO `employees` (`idemployees`, `id_company`, `birth_date`, `phone`, `id_bank`, `n_account`, `account_type`, `civil_status`, `idUser`, `place_of_birth`, `place_of_work`, `state`, `location`, `eps`, `arp`, `pension`, `id_charge`, `id_depart`, `id_sex`, `id_clasificacion`, `contracts_idcontracts`, `Users_id_identification`, `name`, `last_name`, `address`) VALUES (NULL, '1', '2017-12-12 00:00:00', '313575774', '1', '102568', NULL, '1', '1', NULL, NULL, '1', '1', '1', '1', '1', '1', '1', '1', '1', NULL, NULL, 'JORGE ANDRES', 'BUITRAGO LEAL', NULL);
