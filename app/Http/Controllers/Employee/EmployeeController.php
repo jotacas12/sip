@@ -13,26 +13,34 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
 
-        $array = array('BANCOS',
-            'EPS',
-            'PENSION',
-            'CARGOS',
-            'SEXO',
-            'ESTADO',
-            'ARL',
-            'LOCALIZACION',
-            'CLASIFICACION',
-            'TIPO CONTRATOS');
-        $longitud = count($array);
+        $employeeU = employee::find($id);
 
-        for ($i = 0; $i < $longitud; $i++) {
-            //saco el valor de cada elemento
-            echo $array[$i];
-            echo "<br>";
-        }
+        return $employeeU;
+    }
+    /**$menu
+    ={inventario{
+    compras{
+    update,
+    delete,
+    },
+    materiales{
+    update,
+    delete,
+    }
+
+    },
+    administracion{
+    usuarios{
+    update,
+    delete,
+
+    }
+    }
+
+    }  /**
     }
 
     /**

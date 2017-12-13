@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDepartmentsTable extends Migration
+class CreateEpsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateDepartmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('eps', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name_departments');
+            $table->String('name');
+            $table->integer('id_list')->unsigned();
+
             $table->timestamps();
+
+            $table->foreign('id_list')->references('id')->on('lists');
         });
     }
 
@@ -27,6 +31,6 @@ class CreateDepartmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('eps');
     }
 }

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 class employee extends Model
 {
     protected $fillable = [
-        'identification',
         'id_company',
         'birth_date',
         'phone',
@@ -14,20 +13,19 @@ class employee extends Model
         'n_account',
         'account_type',
         'civil_status',
+        'idUser',
+        'place_of_birth',
         'place_of_work',
         'state',
         'location',
         'eps',
         'arp',
         'pension',
-        'type_contracts',
-        'sex',
-        'id_depart',
-        'id_municipaly',
         'id_charge',
-        'name_user',
-        'last_name',
-        'Photo',
-        'id_classification',
+        'id_depart',
+        'identification',
+        'id_sex',
+        'id_clasificacion',
+        'id_contract',
     ];
 }

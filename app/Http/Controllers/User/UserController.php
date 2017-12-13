@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,30 @@ class UserController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
-        return $usuarios;
+ 
+    }
+
+    public function readJson($json = '')
+    {
+        
+        $var  = json_decode($json);
+        $user   = $var->user;
+        $pass   =$var->pass;
+        
+      
+        $var1= DB::table('users')->where('id_identification',  $user)->where('password', $pass) ->first();
+
+   
+       if(!$var1){
+
+        $response=false;
+        $identification=false;
+       }else{
+        $response=true;
+        $identification=$var1->id_identification;
+       }
+        return response()->json(['status' => 'ok', 'data' => $response,'identification'=>$identification], 200);
+
     }
 
     /**
@@ -42,7 +65,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+      public function show($id)
     {
         //
     }

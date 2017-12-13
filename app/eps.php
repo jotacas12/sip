@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class eps extends Model
+class Eps extends Model
 {
     protected $fillable = [
-        'name_eps',
+        'name',
+        'id_list',
     ];
 }

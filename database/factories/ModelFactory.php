@@ -1,6 +1,5 @@
 <?php
 
-use App\Listas;
 use App\User;
 
 /*
@@ -17,38 +16,5 @@ use App\User;
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
-
-    return [
-        'id_identification' => 1039679695,
-        'email'             => 'sistemas@grupoempresarialcyc.com',
-        'password'          => '1234Abc',
-
-    ];
-
-});
-
-$factory->define(App\Listas::class, function (Faker\Generator $faker) {
-    static $password;
-
-    $array = array('BANCOS',
-        'EPS',
-        'PENSION',
-        'CARGOS',
-        'SEXO',
-        'ESTADO',
-        'ARL',
-        'LOCALIZACION',
-        'CLASIFICACION',
-        'TIPO CONTRATOS');
-    $longitud = count($array);
-
-    for ($i = 0; $i < $longitud; $i++) {
-        //saco el valor de cada elemento
-        return [
-
-            'name' => $array[$i],
-
-        ];
-    }
 
 });

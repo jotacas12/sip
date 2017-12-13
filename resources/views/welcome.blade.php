@@ -93,3 +93,23 @@
         </div>
     </body>
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+$(function(){
+console.log('hola');
+url='http://localhost/sip/public/api/employee',
+$.get(url,'',function(data){
+console.log(data);
+localStorage.setItem("data", data);
+})
+
+
+
+})
+
+</script>

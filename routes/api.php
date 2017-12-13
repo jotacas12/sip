@@ -11,5 +11,8 @@
 |
  */
 
-Route::resource('user', 'User\UserController', ['except' => ['create', 'edit']]);
-Route::resource('employee', 'Employee\EmployeeController', ['except' => ['create', 'edit']]);
+Route::group(['middleware' => 'cors'], function () {
+Route::get('/user/{json}', 'User\UserController@readJson');
+Route::get('/company', 'Company\CompanyController@index');
+
+});

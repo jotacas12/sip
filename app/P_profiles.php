@@ -2,12 +2,12 @@
 
 namespace App;
 
+use App\P_profiles;
 use Illuminate\Database\Eloquent\Model;
 
-class charge extends Model
+class P_profiles extends Model
 {
     protected $fillable = [
-        'name_charges',
-        'id_company',
-    ];
+        'name'];
+
 }

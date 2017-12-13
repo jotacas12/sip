@@ -1,8 +1,8 @@
 <?php
 
-use App\Listas;
-use App\User;
+use App\Lists;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,7 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
-        Listas::truncate();
+
+        DB::table('Lists')->delete();
+        Lists::truncate();
+
     }
 }

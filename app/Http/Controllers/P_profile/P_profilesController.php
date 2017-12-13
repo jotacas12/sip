@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Company;
+namespace App\Http\Controllers\P_profile;
 
-use Illuminate\Http\Request;
+use App\Employee;
 use App\Http\Controllers\Controller;
-use App\company;
+use App\P_profiles;
+use Illuminate\Http\Request;
 
-class CompanyController extends Controller
+class P_profilesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $company = company::all();
-        return $company;
+
+        $empleado = P_profiles::where('idP_profiles', '=', Employee::get('idUser'))->get()->first();
     }
 
     /**
@@ -24,10 +25,6 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -57,10 +54,6 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
