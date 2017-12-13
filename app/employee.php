@@ -1,11 +1,18 @@
 <?php
 namespace App;
 
+use App\P_profiles;
 use Illuminate\Database\Eloquent\Model;
 
 class employee extends Model
 {
+<<<<<<< HEAD
     protected $fillable = [
+=======
+    protected $primaryKey = 'idemployees';
+    protected $fillable   = [
+        'identification',
+>>>>>>> e5b8aaffdd4ada777449d5248f52f82799e3188e
         'id_company',
         'birth_date',
         'phone',
@@ -28,4 +35,9 @@ class employee extends Model
         'id_clasificacion',
         'id_contract',
     ];
+
+    public function profile()
+    {
+        return $this->belongsTo(P_profiles::class);
+    }
 }
