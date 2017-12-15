@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\User;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 class UserController extends Controller
 {
     /**
@@ -18,26 +19,21 @@ class UserController extends Controller
     {
  
     }
-
     public function create(Request $request){
         
-       
+        
         $user = $request->input("user"); 
         $pass = $request->input("pass"); 
         $mail = $request->input("mail"); 
         $state = $request->input("state"); 
-
-
         DB::table('users')->insert(
             ['id_identification' => $user, 'password' =>  $pass,'mail' => $mail, 'state' => $state]
         );
     }
-
     public function readJson(Request $request)
     {
-
         $user = $request->input("user"); 
-        $pass = $request->input("pass"); 
+        $pass = $request->input("password"); 
         
       
         $var1= DB::table('users')
@@ -47,9 +43,7 @@ class UserController extends Controller
         ->select('users.*')
         ->first();
 
-
        if(!$var1){
-
         $response=false;
         $identification=false;
        }else{
@@ -57,15 +51,12 @@ class UserController extends Controller
         $identification=$var1->id_identification;
        }
         return response()->json(['status' => 'ok', 'data' => $response,'identification'=>$identification], 200);
-
     }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     /**
      * Store a newly created resource in storage.
      *
@@ -76,7 +67,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -87,14 +77,12 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
     /**
      * Update the specified resource in storage.
      *
@@ -106,7 +94,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

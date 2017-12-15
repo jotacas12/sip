@@ -17,64 +17,15 @@ class EmployeeController extends Controller
      */
     public function index($id)
     {
-
-<<<<<<< HEAD
         $employeeU = employee::find($id);
 
         return $employeeU;
     }
-    /**$menu
-    ={inventario{
-    compras{
-    update,
-    delete,
-    },
-    materiales{
-    update,
-    delete,
-    }
-
-    },
-    administracion{
-    usuarios{
-    update,
-    delete,
-
-    }
-    }
-
-    }  /**
-=======
+   
         //return response()->json(['data' => $usuario], 200);
         //$employee = DB::select('select * from employees')->get()->toArray();
 
-        $employee = employee::where("idemployees", "=", 1)->first();
-
-        $id = $employee->idUser;
-
-        $P_menu = Profile_menu::where("id_profile", "=", $id)->get();
-
-        $arraymenu    = array();
-        $arraysubmenu = array();
-        foreach ($P_menu as $producto) {
-
-            $menu = menu::where("idmenu", "=", $producto->idmenu)->get()->first();
-
-            array_push($arraymenu, $menu->idmenu, $menu->namemenu);
-
-        }
-
-        foreach ($arraymenu as $menus) {
-            // echo $menus->idmenu;
-            //$submenu = Submenu::where("idmenu", "=", $menus->idmenu)->get();
-            //return $submenu;
-            //array_push($arraysubmenu, $submenu->idsubmenu, $submenu->namesumenu);
-
-        }
-
->>>>>>> e5b8aaffdd4ada777449d5248f52f82799e3188e
-    }
-
+        
 /**
  * Show the form for creating a new resource.
  *
